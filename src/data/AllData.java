@@ -2,7 +2,7 @@ package data;
 
 import structure.Person;
 import structure.Preferences;
-import structure.SkiRecord;
+import structure.Ski;
 
 import java.util.ArrayList;
 import java.util.Dictionary;
@@ -12,7 +12,7 @@ public class AllData {
     public String pathWykaz;
     public String pathZnizki;
     private ArrayList<Preferences> allPreferences;
-    private ArrayList<SkiRecord> register;
+    private Dictionary<Ski, Integer> register;
     private Dictionary<Person.Group, Integer> discount;
 
     public AllData(String pathPreferences, String pathWykaz, String pathZnizki) {
@@ -40,7 +40,7 @@ public class AllData {
         return allPreferences;
     }
 
-    public ArrayList<SkiRecord> getRegister() {
+    public Dictionary<Ski, Integer> getRegister() {
         return register;
     }
 

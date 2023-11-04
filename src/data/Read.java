@@ -3,7 +3,6 @@ package data;
 import structure.Person;
 import structure.Preferences;
 import structure.Ski;
-import structure.SkiRecord;
 import structure.Person.Group;
 
 import java.io.File;
@@ -24,7 +23,7 @@ public class Read {
                 ArrayList<Ski> skis = new ArrayList<>();
                 for (String ski : data[2].split(";")){
                     String[] components = ski.split(":");
-                    skis.add(new Ski(components[0], Integer.parseInt(components[1])));
+                    skis.add(new Ski(Ski.Type.valueOf(components[0]), Integer.parseInt(components[1])));
                 }
 
                 allPref.add(new Preferences(skis, p));
@@ -37,8 +36,8 @@ public class Read {
         return allPref;
     }
 
-    public ArrayList<SkiRecord> readRegister(String path) {
-        ArrayList<SkiRecord> register = new ArrayList<>();
+    public Dictionary<Ski, Integer> readRegister(String path) {
+        Dictionary<Ski, Integer> register = new Hashtable<>();
 
         try {
             File file = new File(path);
@@ -48,9 +47,9 @@ public class Read {
                 String[] data = scanner.nextLine().split(",");
                 int q = Integer.parseInt(data[0]);
                 String[] components = data[1].split(":");
-                Ski s = new Ski(components[0], Integer.parseInt(components[1]));
+                Ski s = new Ski(Ski.Type.valueOf(components[0]), Integer.parseInt(components[1]));
 
-                register.add(new SkiRecord(q, s));
+                register.put(s, q);
             }
         } catch (FileNotFoundException e) {
             System.out.println("File not found.");

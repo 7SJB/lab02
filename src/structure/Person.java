@@ -1,7 +1,7 @@
 package structure;
 
 public class Person {
-    public enum Group {Child, Junior, Adult}
+    public enum Group {C, J, A}
     private int id;
     private Group group;
 

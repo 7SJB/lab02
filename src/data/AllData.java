@@ -20,10 +20,31 @@ public class AllData {
         this.pathWykaz = pathWykaz;
         this.pathZnizki = pathZnizki;
     }
-    public void ReadAllData(){
+    public void readAllData(){
         Read readData = new Read();
-        allPreferences = readData.readAllPreferences(pathPreferences);
-        register = readData.readRegister(pathWykaz);
+        this.allPreferences = readData.readAllPreferences(pathPreferences);
+        this.register = readData.readRegister(pathWykaz);
+        this.discount = readData.readDiscount(pathZnizki);
+    }
 
+    @Override
+    public String toString() {
+        return "AllData{" +
+                "\nallPreferences=" + allPreferences +
+                ", \nregister=" + register +
+                ", \ndiscount=" + discount +
+                '}';
+    }
+
+    public ArrayList<Preferences> getAllPreferences() {
+        return allPreferences;
+    }
+
+    public ArrayList<SkiRecord> getRegister() {
+        return register;
+    }
+
+    public Dictionary<Person.Group, Integer> getDiscount() {
+        return discount;
     }
 }

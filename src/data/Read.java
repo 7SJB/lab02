@@ -8,10 +8,7 @@ import structure.Person.Group;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.Dictionary;
-import java.util.Hashtable;
-import java.util.Scanner;
+import java.util.*;
 
 public class Read {
     public ArrayList<Preferences> readAllPreferences(String path) {
@@ -50,7 +47,7 @@ public class Read {
             while(scanner.hasNextLine()){
                 String[] data = scanner.nextLine().split(",");
                 int q = Integer.parseInt(data[0]);
-                String[] components = data[1].split(";");
+                String[] components = data[1].split(":");
                 Ski s = new Ski(components[0], Integer.parseInt(components[1]));
 
                 register.add(new SkiRecord(q, s));

@@ -1,0 +1,3 @@
+1,J,slalom:140;gigant:150
+2,A,race:175,allmountain:175
+3,C,carving:120

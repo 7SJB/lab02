@@ -16,4 +16,12 @@ public class SkiRecord {
     public Ski getSki() {
         return ski;
     }
+
+    @Override
+    public String toString() {
+        return "SkiRecord{" +
+                "quantity=" + quantity +
+                ", ski=" + ski +
+                '}';
+    }
 }

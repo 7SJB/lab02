@@ -6,14 +6,15 @@ import structure.Ski;
 
 import java.util.ArrayList;
 import java.util.Dictionary;
+import java.util.Map;
 
 public class AllData {
     public String pathPreferences;
     public String pathWykaz;
     public String pathZnizki;
     private ArrayList<Preferences> allPreferences;
-    private Dictionary<Ski, Integer> register;
-    private Dictionary<Person.Group, Integer> discount;
+    private Map<Ski, Integer> register;
+    private Map<Person.Group, Integer> discount;
 
     public AllData(String pathPreferences, String pathWykaz, String pathZnizki) {
         this.pathPreferences = pathPreferences;
@@ -40,11 +41,11 @@ public class AllData {
         return allPreferences;
     }
 
-    public Dictionary<Ski, Integer> getRegister() {
+    public Map<Ski, Integer> getRegister() {
         return register;
     }
 
-    public Dictionary<Person.Group, Integer> getDiscount() {
+    public Map<Person.Group, Integer> getDiscount() {
         return discount;
     }
 }

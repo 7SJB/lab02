@@ -36,8 +36,8 @@ public class Read {
         return allPref;
     }
 
-    public Dictionary<Ski, Integer> readRegister(String path) {
-        Dictionary<Ski, Integer> register = new Hashtable<>();
+    public Map<Ski, Integer> readRegister(String path) {
+        Map<Ski, Integer> register = new Hashtable<>();
 
         try {
             File file = new File(path);
@@ -59,8 +59,8 @@ public class Read {
         return register;
     }
 
-    public Dictionary<Person.Group, Integer> readDiscount(String path){
-        Dictionary<Person.Group, Integer> discount = new Hashtable<>();
+    public Map<Person.Group, Integer> readDiscount(String path){
+        Map<Person.Group, Integer> discount = new Hashtable<>();
         try{
             File file = new File(path);
             Scanner scanner = new Scanner(file);

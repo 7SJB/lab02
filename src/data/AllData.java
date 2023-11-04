@@ -14,7 +14,7 @@ public class AllData {
     public String pathZnizki;
     private ArrayList<Preferences> allPreferences;
     private Map<Ski, Integer> register;
-    private Map<Person.Group, Integer> discount;
+    public static Map<Person.Group, Integer> discount;
 
     public AllData(String pathPreferences, String pathWykaz, String pathZnizki) {
         this.pathPreferences = pathPreferences;

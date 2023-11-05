@@ -5,7 +5,8 @@ import java.util.ArrayList;
 public class Preferences {
     private final ArrayList<Ski> list;
     private final Person person;
-    public Preferences(ArrayList<Ski> list, Person person){
+
+    public Preferences(ArrayList<Ski> list, Person person) {
         this.list = list;
         this.person = person;
     }
@@ -20,9 +21,9 @@ public class Preferences {
 
     @Override
     public String toString() {
-        return "Preferences{" +
-                "list=" + list +
-                ", person=" + person +
+        return "Preferences{ " +
+                "person=" + person +
+                ", list=" + list +
                 '}';
     }
 }

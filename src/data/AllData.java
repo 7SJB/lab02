@@ -20,7 +20,8 @@ public class AllData {
         this.pathWykaz = pathWykaz;
         this.pathZnizki = pathZnizki;
     }
-    public void readAllData(){
+
+    public void readAllData() {
         Read readData = new Read();
         this.allPreferences = readData.readAllPreferences(pathPreferences);
         this.register = readData.readRegister(pathWykaz);

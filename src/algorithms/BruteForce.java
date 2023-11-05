@@ -47,17 +47,17 @@ public class BruteForce {
                             findSolution(newPrefs, newRegister, newDistribution);
                         }
                     }
-                }else{
+                } else {
                     Map<Preferences, Ski> newDistribution = new HashMap<>(currentDistribution);
 
                     ArrayList<Preferences> newPrefs = new ArrayList<>(prefs);
                     newPrefs.remove(p);
 
-                    newDistribution.put(p,null);
+                    newDistribution.put(p, null);
                     findSolution(newPrefs, register, newDistribution);
                 }
             }
-        }else {
+        } else {
             Criteria criteria = new Criteria(2, 2, 5, 10);
             int val = criteria.getValue(currentDistribution);
 
@@ -74,5 +74,24 @@ public class BruteForce {
 
     public Map<Preferences, Ski> getBestDistribution() {
         return bestDistribution;
+    }
+
+    private String toStringBestDistribution(){
+        StringBuilder formatted = new StringBuilder();
+        for(Preferences p : bestDistribution.keySet()){
+            formatted.append(p);
+            formatted.append(" - przydzeielono - ");
+            formatted.append(bestDistribution.get(p));
+            formatted.append("\n");
+        }
+
+        return formatted.toString();
+    }
+
+    @Override
+    public String toString() {
+        return "BruteForce" +
+                "\nbestValue=" + bestValue +
+                "\nbestDistribution=\n" + toStringBestDistribution();
     }
 }

@@ -1,13 +1,16 @@
 package data;
 
 import structure.Person;
+import structure.Person.Group;
 import structure.Preferences;
 import structure.Ski;
-import structure.Person.Group;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
 
 public class Read {
     public ArrayList<Preferences> readAllPreferences(String path) {
@@ -16,19 +19,19 @@ public class Read {
         try {
             File file = new File(path);
             Scanner scanner = new Scanner(file);
-            while (scanner.hasNextLine()){
+            while (scanner.hasNextLine()) {
                 String[] data = scanner.nextLine().split(",");
                 Person p = new Person(Integer.parseInt(data[0]), data[1]);
 
                 ArrayList<Ski> skis = new ArrayList<>();
-                for (String ski : data[2].split(";")){
+                for (String ski : data[2].split(";")) {
                     String[] components = ski.split(":");
                     skis.add(new Ski(Ski.Type.valueOf(components[0]), Integer.parseInt(components[1])));
                 }
 
                 allPref.add(new Preferences(skis, p));
             }
-        }catch (FileNotFoundException e){
+        } catch (FileNotFoundException e) {
             System.out.println("File not found.");
             //noinspection CallToPrintStackTrace
             e.printStackTrace();
@@ -43,7 +46,7 @@ public class Read {
             File file = new File(path);
             Scanner scanner = new Scanner(file);
 
-            while(scanner.hasNextLine()){
+            while (scanner.hasNextLine()) {
                 String[] data = scanner.nextLine().split(",");
                 int q = Integer.parseInt(data[0]);
                 String[] components = data[1].split(":");
@@ -59,17 +62,17 @@ public class Read {
         return register;
     }
 
-    public Map<Person.Group, Integer> readDiscount(String path){
+    public Map<Person.Group, Integer> readDiscount(String path) {
         Map<Person.Group, Integer> discount = new HashMap<>();
-        try{
+        try {
             File file = new File(path);
             Scanner scanner = new Scanner(file);
 
-            while(scanner.hasNextLine()) {
+            while (scanner.hasNextLine()) {
                 String[] data = scanner.nextLine().split(",");
                 discount.put(Group.valueOf(data[0]), Integer.valueOf(data[1]));
             }
-        }catch (FileNotFoundException e){
+        } catch (FileNotFoundException e) {
             System.out.println("File not found.");
             //noinspection CallToPrintStackTrace
             e.printStackTrace();

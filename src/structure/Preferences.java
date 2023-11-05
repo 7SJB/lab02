@@ -3,8 +3,8 @@ package structure;
 import java.util.ArrayList;
 
 public class Preferences {
-    private ArrayList<Ski> list;
-    private Person person;
+    private final ArrayList<Ski> list;
+    private final Person person;
     public Preferences(ArrayList<Ski> list, Person person){
         this.list = list;
         this.person = person;

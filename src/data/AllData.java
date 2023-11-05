@@ -5,7 +5,6 @@ import structure.Preferences;
 import structure.Ski;
 
 import java.util.ArrayList;
-import java.util.Dictionary;
 import java.util.Map;
 
 public class AllData {

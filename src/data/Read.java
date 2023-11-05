@@ -37,7 +37,7 @@ public class Read {
     }
 
     public Map<Ski, Integer> readRegister(String path) {
-        Map<Ski, Integer> register = new Hashtable<>();
+        Map<Ski, Integer> register = new HashMap<>();
 
         try {
             File file = new File(path);
@@ -60,7 +60,7 @@ public class Read {
     }
 
     public Map<Person.Group, Integer> readDiscount(String path){
-        Map<Person.Group, Integer> discount = new Hashtable<>();
+        Map<Person.Group, Integer> discount = new HashMap<>();
         try{
             File file = new File(path);
             Scanner scanner = new Scanner(file);
